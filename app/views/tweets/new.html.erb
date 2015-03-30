@@ -1,6 +1,0 @@
-<%= render 'shared/header', title: "Two Tone Twitter" %>
-
-<%= bootstrap_form_for [@user, @tweet] do |f| %>
-  <%=f.text_field :body %>
-  <%=f.submit "Tweet!" %>
-<%end%>
