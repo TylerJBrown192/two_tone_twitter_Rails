@@ -1,9 +1,16 @@
 <%= render 'shared/header', title: "Two Tone Twitter" %>
 
-<h1>All Tweets</h1>
+<% if @tweets.any? %>
+  <h3>All Tweets</h3>
 
-<ul>
-  <% @tweets.each do |tweet| %>
-  <li><h4><%= link_to tweet.user_id.user_name, user_path(@user) %></h4><p><%= tweet.body %></p></li>
-  <% end %>
-</ul>
+  <ul>
+    <%= @tweets.each do |tweet| %>
+      <li><h5><%= link_to tweet.user_id.username, user_path(@user) %></h5><p><%= tweet.body %></p></li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+  <h3>No tweets exist yet. Become the first user to tweet!</h3>
+
+<% end %>
