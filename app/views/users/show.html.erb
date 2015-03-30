@@ -1,16 +1,20 @@
+<%= render 'shared/header', title: "Two Tone Twitter" %>
+
+<%= link_to "Tweet away!", new_user_tweet_path(@user) %>
+
 <% if @user.tweets.any? %>
 
-<h1><%= @user.username %>'s Tweets</h1>
+  <h1><%= @user.username %>'s Tweets</h1>
 
-<ul>
-  <% @user.tweets.each do |tweet| %>
-  <li><p><%= tweet.body %></p></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @user.tweets.each do |tweet| %>
+    <li><p><%= tweet.body %></p></li>
+    <% end %>
+  </ul>
 
 <% else %>
-<br>
+  <br>
 
-<h1><%= @user.username %> has no tweets yet!</h1>
+  <h3><%= @user.username %> has no tweets yet!</h3>
 
 <% end %>
