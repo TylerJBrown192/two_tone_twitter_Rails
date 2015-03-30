@@ -1,0 +1,9 @@
+<%= render 'shared/header', title: "Two Tone Twitter" %>
+
+<h1>All Tweets</h1>
+
+<ul>
+  <% @tweets.each do |tweet| %>
+  <li><h4><%= link_to tweet.user_id.user_name, user_path(@user) %></h4><p><%= tweet.body %></p></li>
+  <% end %>
+</ul>

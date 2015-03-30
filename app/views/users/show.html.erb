@@ -1,0 +1,16 @@
+<% if @user.tweets.any? %>
+
+<h1><%= @user.user_name %>'s Tweets</h1>
+
+<ul>
+  <% @user.tweets.each do |tweet| %>
+  <li><p><%= tweet.body %></p></li>
+  <% end %>
+</ul>
+
+<% else %>
+<br>
+
+<h1><%= @user.user_name %> has no tweets yet!</h1>
+
+<% end %>
