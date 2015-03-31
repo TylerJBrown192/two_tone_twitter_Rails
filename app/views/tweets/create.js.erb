@@ -1,3 +1,4 @@
 $('#new_tweet').remove();
-$('#new_link').show();
-$('#tweets').append('<%= j tweet.body %>')
+$('#new_tweet_link').show();
+$('#tweets').append('<li><%= j @tweet.body %></li>')
+$('#flash').html('<%= j flash[:notice] %>')

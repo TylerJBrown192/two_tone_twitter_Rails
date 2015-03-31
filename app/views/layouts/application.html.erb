@@ -10,9 +10,11 @@
 
   <div class="container">
     <%= render 'layouts/navbar' %>
-    
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+
+    <div id="flash">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+    </div>
 
     <%= yield %>
   </div>

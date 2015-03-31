@@ -1,4 +1,4 @@
-<%= bootstrap_form_for [@user, @tweet], remote:true do |f| %>
-  <%=f.text_field :body %>
-  <%=f.submit "Tweet!" %>
+<%= bootstrap_form_for [@user, @tweet], remote: true do |f| %>
+  <%= f.text_field :body %>
+  <%= f.submit "Tweet!" %>
 <%end%>

@@ -1,12 +1,12 @@
 <%= render 'shared/header', title: "Two Tone Twitter" %>
 
-<%= link_to "Tweet away!", new_user_tweet_path(@user), id: "new_tweet", remote: true %>
+<%= link_to "Tweet away!", new_user_tweet_path(@user), id: "new_tweet_link", remote: true %>
 
 <% if @user.tweets.any? %>
 
   <h1><%= @user.username %>'s Tweets</h1>
 
-  <ul>
+  <ul id="tweets">
     <% @user.tweets.each do |tweet| %>
     <li><p><%= tweet.body %></p></li>
     <% end %>

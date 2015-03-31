@@ -14,12 +14,14 @@ class TweetsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @tweet = current_user.tweets.new(tweet_params)
-    @tweet.save
-    respond_to do |format|
-      format.html { redirect_to user_path(@user) }
-      format.js
+    if @tweet.save
+      respond_to do |format|
+        format.html { redirect_to user_path(@user) }
+        format.js { flash.now[:notice] = "Thanks for tweeting!" }
+      end
+    else
+      render :new
     end
-    flash[:notice] = "Thanks for tweeting!"
   end
 
 
