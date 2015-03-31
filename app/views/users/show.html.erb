@@ -6,7 +6,7 @@
 
   <h1><%= @user.username %>'s Tweets</h1>
 
-  <ul id="tweets">
+  <ul>
     <% @user.tweets.each do |tweet| %>
     <li><p><%= tweet.body %></p></li>
     <% end %>

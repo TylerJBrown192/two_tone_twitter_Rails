@@ -1,0 +1,5 @@
+<ul id="tweets">
+  <% @user.tweets.each do |tweet| %>
+  <li><p><%= tweet.body %></p></li>
+  <% end %>
+</ul>
