@@ -14,7 +14,9 @@
 
   </ul>
 
-  <p class="float-nav">
-    Logged in as <strong><%= current_user.username %></strong>.
-  </p>
+  <% if user_signed_in? %>
+    <p class="float-nav">
+      Logged in as <strong><%= current_user.username %></strong>.
+    </p>
+  <% end %>
 </nav>
