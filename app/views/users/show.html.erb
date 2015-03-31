@@ -1,7 +1,9 @@
 <%= render 'shared/header', title: "Two Tone Twitter" %>
 
-<% if current_user.id == @user.id %>
+<% if (user_signed_in?) && (current_user.id == @user.id) %>
   <%= link_to "Tweet away!", new_user_tweet_path(@user), id: "new_tweet_link", remote: true %>
+<% else %>
+  <h5>Thanks for checking out <%= @user.username %>'s page!</h5>
 <% end %>
 
 <%= render "tweets" %>
