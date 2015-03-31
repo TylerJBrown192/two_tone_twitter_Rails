@@ -1,12 +1,10 @@
 <%= render 'shared/header', title: "Two Tone Twitter" %>
 
 <% if @tweets.any? %>
+
   <h3>All Tweets</h3>
 
-  <%= render @tweets %>
-
-
-  
+  <%= render @tweets.reverse %>
 
 <% else %>
 

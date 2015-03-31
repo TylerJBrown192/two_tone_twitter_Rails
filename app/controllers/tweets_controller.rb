@@ -18,6 +18,8 @@ class TweetsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to user_path(@user) }
         format.js { flash.now[:notice] = "Thanks for tweeting!" }
+        # flash.now necessary for AJAX loading
+        # of notification and not having it persist through html requests
       end
     else
       render :new

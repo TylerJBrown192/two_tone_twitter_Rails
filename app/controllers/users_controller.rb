@@ -38,6 +38,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(current_user)
+    @user.tweets.destroy
+    @user.destroy
+    redirect_to '/'
+  end
+
 private
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)

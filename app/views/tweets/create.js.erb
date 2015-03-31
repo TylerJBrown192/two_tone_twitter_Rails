@@ -1,4 +1,6 @@
 $('#new_tweet').remove();
 $('#new_tweet_link').show();
-$('#tweets').append('<li><%= j @tweet.body %></li>')
-$('#flash').html('<%= j flash[:notice] %>')
+$('#tweets').prepend('<p><%= j @tweet.body %></p>');
+$('#flash').html('<%= j flash[:notice] %>');
+// #flash targets the div surrounding the notices, and the erb
+// renders the notice laid out in the controller
